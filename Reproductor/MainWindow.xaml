@@ -5,20 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Reproductor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="256.098" Width="800">
+        Title="Reproductor" Height="256.098" Width="800">
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="26,10,0,0" TextWrapping="Wrap" Text="Archivo:" VerticalAlignment="Top"/>
         <TextBox x:Name="txtRutaArchivo" HorizontalAlignment="Left" Height="23" Margin="24,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="505"/>
         <Button x:Name="btnElegirArchivo" Content="Examinar" HorizontalAlignment="Left" Margin="545,34,0,0" VerticalAlignment="Top" Width="75" Height="24" RenderTransformOrigin="-0.878,0.812" Click="btnElegirArchivo_Click"/>
-        <Button x:Name="btnReproducir" Content="Reproducir" HorizontalAlignment="Left" Margin="26,63,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnPausa" Content="Pausa" HorizontalAlignment="Left" Margin="106,63,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnDetener" Content="Detener" HorizontalAlignment="Left" Margin="186,63,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnReproducir" Content="Reproducir" HorizontalAlignment="Left" Margin="26,63,0,0" VerticalAlignment="Top" Width="75" Click="btnReproducir_Click"/>
+        <Button x:Name="btnPausa" Content="Pausa" HorizontalAlignment="Left" Margin="106,63,0,0" VerticalAlignment="Top" Width="75" Click="btnPausa_Click" IsEnabled="False"/>
+        <Button x:Name="btnDetener" Content="Detener" HorizontalAlignment="Left" Margin="186,63,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="btnDetener_Click"/>
         <Slider x:Name="sldRepro" HorizontalAlignment="Left" Margin="26,102,0,0" VerticalAlignment="Top" Height="22" Width="594"/>
         <TextBlock x:Name="lblTiempoActual" HorizontalAlignment="Left" Margin="26,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="00:00"/>
-        <TextBlock x:Name="lblTiempoTotal" HorizontalAlignment="Left" Margin="586,124,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" RenderTransformOrigin="1.955,0.312"/>
+        <TextBlock x:Name="lblTiempoTotal" HorizontalAlignment="Left" Margin="565,124,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" RenderTransformOrigin="1.955,0.312"/>
         <Slider x:Name="sldVolumen" HorizontalAlignment="Left" Margin="740,34,0,0" VerticalAlignment="Top" Width="23" Orientation="Vertical" Height="176"/>
         <TextBlock x:Name="lblVolumen" HorizontalAlignment="Left" Margin="708,194,0,0" TextWrapping="Wrap" Text="0%" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="686,34,0,0" TextWrapping="Wrap" Text="Volúmen:" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbSalida" HorizontalAlignment="Left" Margin="273,63,0,0" VerticalAlignment="Top" Width="347"/>
 
     </Grid>
 </Window>
