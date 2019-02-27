@@ -31,6 +31,8 @@ namespace Reproductor
         //Hilo
         DispatcherTimer timer;
 
+        bool dragging = false;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -48,6 +50,11 @@ namespace Reproductor
             if(reader != null)
             {
                 lblTiempoActual.Text = reader.CurrentTime.ToString().Substring(0, 8);
+                sldRepro.Value = reader.CurrentTime.TotalSeconds;
+            }
+            if(!dragging)
+            {
+                sldRepro.Value = reader.CurrentTime.TotalSeconds;
             }
         }
 
@@ -99,6 +106,8 @@ namespace Reproductor
 
                 lblTiempoTotal.Text = reader.TotalTime.ToString().Substring(0, 8);
                 lblTiempoActual.Text = reader.CurrentTime.ToString().Substring(0, 8);
+                sldRepro.Maximum = reader.TotalTime.TotalSeconds;
+                sldRepro.Value = reader.CurrentTime.TotalSeconds;
 
                 timer.Start();
             }
@@ -130,6 +139,20 @@ namespace Reproductor
                 btnReproducir.IsEnabled = true;
                 btnPausa.IsEnabled = false;
                 btnDetener.IsEnabled = false;
+            }
+        }
+
+        private void sldRepro_DragStarted(object sender, System.Windows.Controls.Primitives.DragStartedEventArgs e)
+        {
+            dragging = true;
+        }
+
+        private void sldRepro_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
+        {
+            dragging = false;
+            if(reader != null && output != null && (output.PlaybackState != PlaybackState.Stopped))
+            {
+                reader.CurrentTime = TimeSpan.FromSeconds(sldRepro.Value);
             }
         }
     }
