@@ -16,10 +16,15 @@
         <Slider x:Name="sldRepro" HorizontalAlignment="Left" Margin="26,102,0,0" VerticalAlignment="Top" Height="22" Width="594" Thumb.DragStarted="sldRepro_DragStarted" Thumb.DragCompleted="sldRepro_DragCompleted"/>
         <TextBlock x:Name="lblTiempoActual" HorizontalAlignment="Left" Margin="26,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="00:00"/>
         <TextBlock x:Name="lblTiempoTotal" HorizontalAlignment="Left" Margin="565,124,0,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" RenderTransformOrigin="1.955,0.312"/>
-        <Slider x:Name="sldVolumen" HorizontalAlignment="Left" Margin="740,34,0,0" VerticalAlignment="Top" Width="23" Orientation="Vertical" Height="176"/>
-        <TextBlock x:Name="lblVolumen" HorizontalAlignment="Left" Margin="708,194,0,0" TextWrapping="Wrap" Text="0%" VerticalAlignment="Top"/>
+        <Slider x:Name="sldVolumen" HorizontalAlignment="Left" Margin="740,34,0,0" VerticalAlignment="Top" Width="23" Orientation="Vertical" Height="176" Maximum="1" ValueChanged="sldVolumen_ValueChanged" Value="0.5"/>
+        <TextBlock x:Name="lblVolumen" HorizontalAlignment="Left" Margin="708,194,0,0" TextWrapping="Wrap" Text="50%" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="686,34,0,0" TextWrapping="Wrap" Text="Volúmen:" VerticalAlignment="Top"/>
         <ComboBox x:Name="cbSalida" HorizontalAlignment="Left" Margin="273,63,0,0" VerticalAlignment="Top" Width="347"/>
+        <TextBlock HorizontalAlignment="Left" Margin="32,162,0,0" TextWrapping="Wrap" Text="Duracion Fade In (s):" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtFadeIn" HorizontalAlignment="Left" Height="23" Margin="32,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="170,162,0,0" TextWrapping="Wrap" Text="Duracion Fade Out (s):" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDuracionFadeOut" HorizontalAlignment="Left" Height="23" Margin="170,181,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnFadeOut" Content="Enviar" HorizontalAlignment="Left" Margin="314,177,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="btnFadeOut_Click"/>
 
     </Grid>
 </Window>
